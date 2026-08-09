@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyeux Anniversaire Marceau ! 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #ff4757;
+      --secondary: #2ed573;
+      --bg: #0a0a23;
+      --card-bg: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a0a23 0%, #1a1a40 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(45deg, #ff4757, #ffa502, #2ed573, #1e90ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow 6s ease infinite;
+      background-size: 300% 300%;
+    }
+
+    p.subtitle {
+      font-size: 1.2rem;
+      color: #a4b0be;
+      margin-top: 0.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .btn-party {
+      background: linear-gradient(45deg, #ff4757, #ff6b81);
+      border: none;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+      margin: 1rem 0;
+    }
+
+    .btn-party:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+    }
+
+    .btn-party:active {
+      transform: scale(0.98);
+    }
+
+    .memories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .memory-item {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .memory-item span {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      margin-top: auto;
+      color: #747d8c;
+      font-size: 0.9rem;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Joyeux Anniversaire Marceau ! 🎂</h1>
+    <p class="subtitle">Le meilleur pote de la Terre mérite le meilleur site.</p>
+  </header>
+
+  <main class="card">
+    <h2>Fête ça comme il se doit ! 🎉</h2>
+    <p style="margin: 1rem 0; color: #dcdde1;">
+      Clique sur le bouton ci-dessous pour lancer les festivités :
+    </p>
+
+    <button class="btn-party" onclick="lancerConfetti()">
+      Envoyer les confettis ! 🚀
+    </button>
+
+    <div class="memories">
+      <div class="memory-item">
+        <span>🎮</span>
+        <p><strong>Les sessions gaming</strong> de légende</p>
+      </div>
+      <div class="memory-item">
+        <span>🍕</span>
+        <p><strong>Les soirées pizza</strong> interminables</p>
+      </div>
+      <div class="memory-item">
+        <span>🔥</span>
+        <p><strong>Les fous rires</strong> incontrôlables</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="card">
+    <h3>Un petit mot pour toi :</h3>
+    <p style="margin-top: 1rem; line-height: 1.6; color: #f1f2f6;">
+      "Merci d’être toujours là, Marceau. Reste comme tu es, change rien ! Profite à fond de ta journée !" 🙌
+    </p>
+  </div>
+
+  <footer>
+    Fait avec du 💻 par ton meilleur pote
+  </footer>
+
+  <script>
+    // Explosion de confettis au chargement de la page
+    window.addEventListener('DOMContentLoaded', () => {
+      lancerConfetti();
+    });
+
+    // Fonction pour lancer les confettis
+    function lancerConfetti() {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
+</body>
+</html>
